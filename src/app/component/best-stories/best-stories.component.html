@@ -1,0 +1,10 @@
+<div>
+    <div>
+        <input [(ngModel)]="searchText" placeholder="search Author">
+    </div>
+    <div *ngFor='let user of response | searchFilter : searchText'>
+        <div>Author: {{user.by}}</div>
+        <div>Title: {{user.title}}</div>
+        <p>-------------------<p>
+    </div>
+</div>
