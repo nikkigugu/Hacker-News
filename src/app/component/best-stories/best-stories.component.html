@@ -1,10 +1,11 @@
-<div>
+<div class ="text">
     <div>
-        <input [(ngModel)]="searchText" placeholder="search Author">
+        <input [(ngModel)]="searchText" placeholder="Search Author">
     </div>
-    <div *ngFor='let user of response | searchFilter : searchText'>
-        <div>Author: {{user.by}}</div>
-        <div>Title: {{user.title}}</div>
-        <p>-------------------<p>
+  <cdk-virtual-scroll-viewport  [itemSize] ="100"  class ="list-container list-group"  >
+    <div  *ngFor='let user of response | searchFilter : searchText' >
+      <div><b>Title:</b> {{user.title}}</div>
+      <div><b>Author:</b> {{user.by}}</div>
     </div>
+  </cdk-virtual-scroll-viewport>
 </div>
